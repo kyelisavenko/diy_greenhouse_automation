@@ -94,3 +94,31 @@ This project aims to automate a home greenhouse using a combination of sensors, 
   
 ## Conclusion
 This plan provides a comprehensive guide for developing and implementing a greenhouse automation project. As you proceed, keep testing and refining the system to ensure it meets your needs effectively.
+
+This diagram illustrates the architecture of the greenhouse automation system, showing the connections between various components:
+
+![Greenhouse Architecture Diagram](greenhouse_architecture_diagram.png)
+
+## Component Descriptions:
+- **Solar Panel:** Provides power to the system by charging the battery.
+- **Battery (12V LiPo):** Stores energy from the solar panel to power the system when needed.
+- **BMS:** Battery Management System, ensures safe operation of the battery by managing charge/discharge cycles.
+- **ESP32 Controller:** The central controller that handles data from sensors and controls the solenoid valve and HMI.
+- **Temperature Sensor:** Monitors the temperature inside the greenhouse.
+- **Humidity Sensor:** Tracks the humidity levels inside the greenhouse.
+- **Soil Moisture Sensor:** Measures the moisture content in the soil.
+- **UV Sensor:** Detects the amount of ultraviolet light in the greenhouse.
+- **CO2 Sensor:** Measures the concentration of CO2 inside the greenhouse.
+- **Solenoid Valve:** Controls water flow for irrigation, activated based on soil moisture levels.
+- **HMI (OLED):** Provides a user interface to monitor system status and adjust settings.
+
+## System Flow:
+1. The **Solar Panel** charges the **Battery**.
+2. The **Battery** is managed by the **BMS** to ensure safe charging and discharging.
+3. The **ESP32 Controller** is powered by the battery and controls all sensors and actuators.
+4. Sensors (Temperature, Humidity, Soil Moisture, UV, CO2) send data to the **ESP32 Controller**.
+5. Based on sensor data, the **ESP32 Controller** activates the **Solenoid Valve** to control irrigation.
+6. The **HMI (OLED)** allows users to interact with the system and monitor data.
+
+This setup ensures that the greenhouse environment is automatically controlled to optimize plant growth.
+
